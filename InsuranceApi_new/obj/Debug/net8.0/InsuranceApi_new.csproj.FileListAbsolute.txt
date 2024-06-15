@@ -125,3 +125,4 @@ C:\Users\Irits_grhcicf\source\repos\InsuranceApi_new\InsuranceApi_new\obj\Debug\
 C:\Users\Irits_grhcicf\source\repos\InsuranceApi_new\InsuranceApi_new\obj\Debug\net8.0\InsuranceApi_new.pdb
 C:\Users\Irits_grhcicf\source\repos\InsuranceApi_new\InsuranceApi_new\obj\Debug\net8.0\InsuranceApi_new.genruntimeconfig.cache
 C:\Users\Irits_grhcicf\source\repos\InsuranceApi_new\InsuranceApi_new\obj\Debug\net8.0\ref\InsuranceApi_new.dll
+C:\Users\Irits_grhcicf\source\repos\InsuranceApi_new\InsuranceApi_new\obj\Debug\net8.0\InsuranceApi_new.sourcelink.json

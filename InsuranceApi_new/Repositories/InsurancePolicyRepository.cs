@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using InsuranceApi.Data;
-using InsuranceApi.Models;
+using InsuranceApi_new.Data;
+using InsuranceApi_new.Models;
 using InsuranceApi_new.Data;
 using InsuranceApi_new.Models;
 using YourNamespace.Repositories;

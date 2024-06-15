@@ -1,16 +1,15 @@
-﻿using InsuranceApi_new.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using InsuranceApi_new.Models;  // Use the actual namespace of your User model
+using InsuranceApi_new.Models;
 
-namespace YourNamespace.Repositories  // Replace with your actual namespace
+namespace YourNamespace.Repositories // Replace with your actual namespace
 {
     public interface IInsurancePolicyRepository
     {
-        Task<IEnumerable<InsurancePolicy>> GetAllPoliciesAsync();
-        Task<InsurancePolicy> GetPolicyByIdAsync(int id);
-        Task AddPolicyAsync(InsurancePolicy policy);
-        Task UpdatePolicyAsync(InsurancePolicy policy);
-        Task DeletePolicyAsync(int id);
+        Task<IEnumerable<InsurancePolicy>> GetPolicies();
+        Task<InsurancePolicy> GetPolicy(int id);
+        Task<InsurancePolicy> AddPolicy(InsurancePolicy policy);
+        Task<InsurancePolicy> UpdatePolicy(InsurancePolicy policy);
+        Task<InsurancePolicy> DeletePolicy(int id);
     }
 }
