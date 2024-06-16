@@ -27,7 +27,14 @@ namespace InsuranceApi_new.Repositories
                 ID = u.ID,
                 Name = u.Name,
                 Email = u.Email,
-                InsurancePolicyIds = u.InsurancePolicies.Select(p => p.ID).ToList()
+                InsurancePolicies = u.InsurancePolicies.Select(p => new InsurancePolicyDTO
+                {
+                    ID = p.ID,
+                    PolicyNumber = p.PolicyNumber,
+                    InsuranceAmount = p.InsuranceAmount,
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                }).ToList()
             });
 
             return userDTOs;
@@ -49,7 +56,14 @@ namespace InsuranceApi_new.Repositories
                 ID = user.ID,
                 Name = user.Name,
                 Email = user.Email,
-                InsurancePolicyIds = user.InsurancePolicies.Select(p => p.ID).ToList()
+                InsurancePolicies = user.InsurancePolicies.Select(p => new InsurancePolicyDTO
+                {
+                    ID = p.ID,
+                    PolicyNumber = p.PolicyNumber,
+                    InsuranceAmount = p.InsuranceAmount,
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                }).ToList()
             };
         }
 
