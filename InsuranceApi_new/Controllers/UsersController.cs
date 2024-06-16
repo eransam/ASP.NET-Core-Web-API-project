@@ -2,11 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InsuranceApi_new.Models;
-using InsuranceApi.Repositories;
-using InsuranceApi_new.Models;
 using InsuranceApi_new.Repositories;
 
-namespace InsuranceApi.Controllers
+namespace InsuranceApi_new.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

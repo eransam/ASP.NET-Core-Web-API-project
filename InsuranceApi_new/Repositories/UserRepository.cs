@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using InsuranceApi_new.Data; // Ensure this matches your namespace
-using InsuranceApi_new.Models; // Ensure this matches your namespace
+using InsuranceApi_new.Data; // Use the correct namespace
+using InsuranceApi_new.Models; // Use the correct namespace
 
 namespace InsuranceApi_new.Repositories
 {
