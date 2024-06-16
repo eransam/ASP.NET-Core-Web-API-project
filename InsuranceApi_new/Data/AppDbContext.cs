@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using InsuranceApi_new.Models; // Ensure this matches your namespace
+using InsuranceApi_new.Models;
 
 namespace InsuranceApi_new.Data
 {
@@ -12,6 +12,14 @@ namespace InsuranceApi_new.Data
         public DbSet<User> Users { get; set; }
         public DbSet<InsurancePolicy> InsurancePolicies { get; set; }
 
-        // Add DbSet properties for other entities as needed
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.InsurancePolicies)
+                .WithOne(p => p.User)
+                .HasForeignKey(p => p.UserID);
+        }
     }
 }

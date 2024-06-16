@@ -18,13 +18,14 @@ namespace InsuranceApi_new.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsers()
         {
-            return await _userRepository.GetUsers();
+            var users = await _userRepository.GetUsers();
+            return Ok(users);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<UserDTO>> GetUser(int id)
         {
             var user = await _userRepository.GetUser(id);
             if (user == null)
@@ -35,14 +36,14 @@ namespace InsuranceApi_new.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<User>> AddUser(User user)
         {
-            var newUser = await _userRepository.AddUser(user);
-            return CreatedAtAction(nameof(GetUser), new { id = newUser.ID }, newUser);
+            var createdUser = await _userRepository.AddUser(user);
+            return CreatedAtAction(nameof(GetUser), new { id = createdUser.ID }, createdUser);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> UpdateUser(int id, User user)
         {
             if (id != user.ID)
             {
@@ -61,6 +62,7 @@ namespace InsuranceApi_new.Controllers
             {
                 return NotFound();
             }
+
             return NoContent();
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using InsuranceApi_new.Data; // Use the correct namespace
-using InsuranceApi_new.Models; // Use the correct namespace
+using InsuranceApi_new.Data;
+using InsuranceApi_new.Models;
 
 namespace InsuranceApi_new.Repositories
 {
@@ -15,14 +16,41 @@ namespace InsuranceApi_new.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<UserDTO>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            var users = await _context.Users
+                .Include(u => u.InsurancePolicies)
+                .ToListAsync();
+
+            var userDTOs = users.Select(u => new UserDTO
+            {
+                ID = u.ID,
+                Name = u.Name,
+                Email = u.Email,
+                InsurancePolicyIds = u.InsurancePolicies.Select(p => p.ID).ToList()
+            });
+
+            return userDTOs;
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<UserDTO> GetUser(int id)
         {
-            return await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.InsurancePolicies)
+                .FirstOrDefaultAsync(u => u.ID == id);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new UserDTO
+            {
+                ID = user.ID,
+                Name = user.Name,
+                Email = user.Email,
+                InsurancePolicyIds = user.InsurancePolicies.Select(p => p.ID).ToList()
+            };
         }
 
         public async Task<User> AddUser(User user)
