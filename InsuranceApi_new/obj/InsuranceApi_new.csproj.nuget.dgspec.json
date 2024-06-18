@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Irits_grhcicf\\source\\repos\\InsuranceApi_new\\InsuranceApi_new\\InsuranceApi_new.csproj": {}
+    "C:\\eran-projects\\exam_project_new\\exam_back_and_db\\InsuranceApi_new\\InsuranceApi_new.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Irits_grhcicf\\source\\repos\\InsuranceApi_new\\InsuranceApi_new\\InsuranceApi_new.csproj": {
+    "C:\\eran-projects\\exam_project_new\\exam_back_and_db\\InsuranceApi_new\\InsuranceApi_new.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Irits_grhcicf\\source\\repos\\InsuranceApi_new\\InsuranceApi_new\\InsuranceApi_new.csproj",
+        "projectUniqueName": "C:\\eran-projects\\exam_project_new\\exam_back_and_db\\InsuranceApi_new\\InsuranceApi_new.csproj",
         "projectName": "InsuranceApi_new",
-        "projectPath": "C:\\Users\\Irits_grhcicf\\source\\repos\\InsuranceApi_new\\InsuranceApi_new\\InsuranceApi_new.csproj",
+        "projectPath": "C:\\eran-projects\\exam_project_new\\exam_back_and_db\\InsuranceApi_new\\InsuranceApi_new.csproj",
         "packagesPath": "C:\\Users\\Irits_grhcicf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Irits_grhcicf\\source\\repos\\InsuranceApi_new\\InsuranceApi_new\\obj\\",
+        "outputPath": "C:\\eran-projects\\exam_project_new\\exam_back_and_db\\InsuranceApi_new\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Irits_grhcicf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -58,7 +62,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.6.2, )"
             }
           },
           "imports": [
